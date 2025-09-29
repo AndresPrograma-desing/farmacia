@@ -1,0 +1,288 @@
+/* --- ESTILOS GENERALES Y RESETEO --- */
+:root {
+    --color-primario: #043366; /* Azul para énfasis */
+    --color-secundario: #0c922c; /* Verde para WhatsApp/Éxito */
+    --color-texto: #ffffff;
+    --color-fondo:url(imgFondo.jpeg);
+    --color-claro: rgb(211, 20, 36);
+    --padding-seccion: 40px;
+    --box-shadow: 1px 1px 2px black;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--color-texto);
+    background-image: var(--color-fondo);
+    backdrop-filter: blur(10px) ;
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+h2 {
+    color: var(--color-primario);
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* --- ESTILOS DE BOTONES --- */
+.btn-principal, .btn-whatsapp {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.btn-principal {
+    background-color: var(--color-primario);
+    color: var(--color-claro);
+}
+
+.btn-principal:hover {
+    background-color: #03a719;
+}
+
+.btn-whatsapp {
+    background-color: var(--color-secundario); 
+    color: var(--color-claro);
+    font-size: 1.1em;
+}
+
+.btn-whatsapp:hover {
+    background-color: #000000;
+    box-shadow:1px 1px 3px green;
+}
+
+.fab.fa-whatsapp {
+    margin-right: 8px;
+}
+
+
+/* --- HEADER/NAVEGACIÓN --- */
+header {
+    background-color: var(--color-primario);
+    color: var(--color-claro);
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-container {
+    display: flex; /* Para alinear el icono/imagen y el h1 */
+    align-items: center; /* Centrar verticalmente */
+    color: rgb(255, 255, 255);
+    border-radius: 20px;
+    box-shadow: 2px 2px 3px black;
+    animation: movimiento1 2s ease-in-out infinite,
+        M2 2s ease forwards;
+    }
+@keyframes movimiento1{
+    0%{background-color: red;}
+    50%{background-color: rgb(0, 58, 250);}
+    100%{background-color: red;}
+}
+@keyframes M2 {
+    0%{padding: 1px;}
+    100%{padding: 10px;}
+}
+.logo-icon {
+    font-size: 1.8em;
+    margin-right: 10px; 
+    
+}
+
+.logo-img {
+    height: 40px; 
+    margin-right: 10px;
+    border-radius: 50%;
+   
+   
+   
+    /* object-fit: contain; para que la imagen no se recorte */
+}
+
+header h1 {
+    font-size: 1.5em;
+    margin: 0; 
+    padding: 0 15px;/* Eliminar margen predeterminado del h1 */
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+}
+
+header nav ul li a {
+    color: wheat;
+    text-decoration: none;
+    padding: 0 35px;
+    display: block;
+}
+
+header nav ul li a:hover {
+    text-decoration: underline rgb(231, 0, 0);
+    box-shadow: 1px 1px 2px;
+    border-radius: 20px;
+}
+
+/* --- SECCIONES PRINCIPALES --- */
+section {
+    padding: var(--padding-seccion) 0;
+}
+
+.hero {
+    background-color: var(--color-claro);
+    text-align: center;
+    padding: 80px 0;
+    border-bottom: 3px solid var(--color-primario);
+}
+
+.hero h2 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    color: var(--color-texto);
+}
+.hero a{
+    color: rgb(255, 255, 255);
+    text-shadow: 1px 1px 3px black ;
+    box-shadow: var(--box-shadow);
+}
+.servicios {
+    background-color: var(--color-fondo);
+    text-align: center;
+}
+.container h2{
+    color: rgb(255, 255, 255);
+    text-shadow: 1px 1px 3px black;
+}
+.servicios-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.servicio-item {
+    background-color: var(--color-claro);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.servicio-item i {
+    font-size: 2.5em;
+    color: black;
+    margin-bottom: 10px;
+}
+
+
+/* --- SECCIÓN WHATSAPP --- */
+.whatsapp-link {
+    background-color: var(--color-primario); /* Fondo verde claro para destacar */
+    text-align: center;
+    padding: var(--padding-seccion) 0;
+}
+
+.whatsapp-link h2 {
+    color: white;
+}
+
+.whatsapp-link p {
+    margin-bottom: 20px;
+    
+}
+.whatsapp-link a {
+   color: var(--color-claro);
+   box-shadow: 2px 2px 3px black;
+    
+}
+
+/* --- FOOTER --- */
+footer {
+    background-color: var(--color-texto);
+    color: var(--color-claro);
+    padding: 20px 0;
+    text-align: center;
+    font-size: 0.9em;
+}
+
+/* --- RESPONSIVE DESIGN (Media Queries) --- */
+
+/* Adaptación para pantallas más pequeñas (móviles) */
+@media (max-width: 768px) {
+    
+    header .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .logo-container {
+        justify-content: center; /* Centra el logo y el título en móvil */
+        margin-bottom: 10px;
+        
+    }
+
+    header nav {
+        margin-top: 10px;
+    }
+
+    header nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    header nav ul li a {
+        padding: 5px 0;
+    }
+
+    .hero h2 {
+        font-size: 2em;
+    }
+
+    .servicios-grid {
+        /* Se mantiene el grid adaptable, pero los ítems son más grandes en vertical */
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Adaptación para móviles muy pequeños */
+@media (max-width: 480px) {
+    :root {
+        --padding-seccion: 30px;
+    }
+    
+    .hero h2 {
+        font-size: 1.5em;
+        border-radius: 50%;
+    }
+
+    .logo-icon {
+        font-size: 1.5em;
+        border-radius: 50%;
+    }
+
+    header h1 {
+        font-size: 1.3em;
+    }
+}
